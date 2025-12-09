@@ -4,7 +4,7 @@ import 'package:http/http.dart' as http;
 /// Service to fetch product data from GitHub JSON
 class GitHubDataService {
   // GitHub raw URL for the products database
-  static const String _baseUrl = 'https://raw.githubusercontent.com/anasnaha/comoprecio/main';
+  static const String _baseUrl = 'https://raw.githubusercontent.com/anasgermany/comoprecio/main';
   
   // Set to false to fetch from GitHub, true to use embedded data
   static const bool _useLocalData = true;
