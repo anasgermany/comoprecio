@@ -102,23 +102,27 @@ class ProductCard extends StatelessWidget {
                     ),
                     const SizedBox(height: 8),
 
-                    // Meta info row
+                      // Meta info row
                     Row(
                       children: [
                         // Best store badge
-                        Container(
-                          padding: const EdgeInsets.symmetric(
-                            horizontal: 8,
-                            vertical: 4,
-                          ),
-                          decoration: BoxDecoration(
-                            color: AppColors.surfaceVariant,
-                            borderRadius: BorderRadius.circular(6),
-                          ),
-                          child: Text(
-                            product.bestStore,
-                            style: AppTypography.labelSmall.copyWith(
-                              color: AppColors.textSecondary,
+                        Flexible(
+                          child: Container(
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: 8,
+                              vertical: 4,
+                            ),
+                            decoration: BoxDecoration(
+                              color: AppColors.surfaceVariant,
+                              borderRadius: BorderRadius.circular(6),
+                            ),
+                            child: Text(
+                              product.bestStore,
+                              style: AppTypography.labelSmall.copyWith(
+                                color: AppColors.textSecondary,
+                              ),
+                              maxLines: 1,
+                              overflow: TextOverflow.ellipsis,
                             ),
                           ),
                         ),
@@ -131,10 +135,14 @@ class ProductCard extends StatelessWidget {
                           color: AppColors.textMuted,
                         ),
                         const SizedBox(width: 4),
-                        Text(
-                          '${product.deliveryDays} días',
-                          style: AppTypography.labelSmall.copyWith(
-                            color: AppColors.textMuted,
+                        Flexible(
+                          child: Text(
+                            '${product.deliveryDays} días',
+                            style: AppTypography.labelSmall.copyWith(
+                              color: AppColors.textMuted,
+                            ),
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
                           ),
                         ),
                         const Spacer(),
