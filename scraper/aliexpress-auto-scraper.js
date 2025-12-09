@@ -19,8 +19,9 @@ const path = require('path');
 
 // Configuration
 const SEARCH_TERM = process.argv[2] || 'women clothes';
+const OUTPUT_FILENAME = process.argv[3] || 'aliexpress_products.json';
 const MAX_PRODUCTS = 200;
-const OUTPUT_FILE = path.join(__dirname, '..', 'data', 'aliexpress_products.json');
+const OUTPUT_FILE = path.join(__dirname, '..', 'data', OUTPUT_FILENAME);
 
 console.log(`
 ╔════════════════════════════════════════════════╗

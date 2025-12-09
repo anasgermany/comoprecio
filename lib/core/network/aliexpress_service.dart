@@ -7,6 +7,7 @@ class AliExpressService {
   static const List<String> _aliExpressUrls = [
     'https://raw.githubusercontent.com/anasgermany/Anas/master/WomenBags1.json',
     'https://raw.githubusercontent.com/anasgermany/comoprecio/main/data/aliexpress_products.json',
+    'https://raw.githubusercontent.com/anasgermany/comoprecio/main/data/aliexpress_sexy_women.json',
     // Add more category URLs here
   ];
   
