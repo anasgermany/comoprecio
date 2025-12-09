@@ -33,9 +33,9 @@ console.log(`
 async function scrapeAliExpress() {
     // Launch browser with visible window
     const browser = await puppeteer.launch({
-        headless: false, // VISIBLE - puedes ver lo que hace
+        headless: "new", // Headless for stability
         defaultViewport: { width: 1280, height: 900 },
-        args: ['--no-sandbox', '--disable-setuid-sandbox']
+        args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage']
     });
 
     const page = await browser.newPage();
@@ -47,11 +47,12 @@ async function scrapeAliExpress() {
     const seenIds = new Set();
 
     try {
-        console.log('🌐 Abriendo AliExpress...');
+        console.log('🌐 Abriendo AliExpress (headless)...');
         await page.goto('https://www.aliexpress.com', {
-            waitUntil: 'networkidle2',
+            waitUntil: 'domcontentloaded', // Faster than networkidle2
             timeout: 60000
         });
+        console.log('✅ Página cargada');
 
         // Wait a bit for page to fully load
         await delay(3000);
