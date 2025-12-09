@@ -63,15 +63,18 @@ class OfferCard extends StatelessWidget {
                       children: [
                         Row(
                           children: [
-                            Text(
-                              offer.storeName,
-                              style: AppTypography.titleMedium,
+                            Flexible(
+                              child: Text(
+                                offer.storeName,
+                                style: AppTypography.titleMedium,
+                                overflow: TextOverflow.ellipsis,
+                              ),
                             ),
-                            const SizedBox(width: 8),
-                            if (isbestPrice)
+                            if (isbestPrice) ...[
+                              const SizedBox(width: 6),
                               Container(
                                 padding: const EdgeInsets.symmetric(
-                                  horizontal: 6,
+                                  horizontal: 5,
                                   vertical: 2,
                                 ),
                                 decoration: BoxDecoration(
@@ -79,24 +82,29 @@ class OfferCard extends StatelessWidget {
                                   borderRadius: BorderRadius.circular(4),
                                 ),
                                 child: Text(
-                                  'MEJOR PRECIO',
+                                  'MEJOR',
                                   style: AppTypography.badge.copyWith(
                                     color: AppColors.darkBackground,
+                                    fontSize: 9,
                                   ),
                                 ),
                               ),
+                            ],
                           ],
                         ),
                         const SizedBox(height: 2),
                         Row(
                           children: [
-                            Text(
-                              offer.sellerType,
-                              style: AppTypography.labelSmall.copyWith(
-                                color: AppColors.textSecondary,
+                            Flexible(
+                              child: Text(
+                                offer.sellerType,
+                                style: AppTypography.labelSmall.copyWith(
+                                  color: AppColors.textSecondary,
+                                ),
+                                overflow: TextOverflow.ellipsis,
                               ),
                             ),
-                            const SizedBox(width: 8),
+                            const SizedBox(width: 4),
                             _ConfidenceBadge(score: offer.confidenceScore),
                           ],
                         ),

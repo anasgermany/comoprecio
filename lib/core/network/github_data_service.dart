@@ -7,7 +7,7 @@ class GitHubDataService {
   static const String _baseUrl = 'https://raw.githubusercontent.com/anasgermany/comoprecio/main';
   
   // Set to false to fetch from GitHub, true to use embedded data
-  static const bool _useLocalData = true;
+  static const bool _useLocalData = false;
   
   static GitHubDataService? _instance;
   ProductDatabase? _cachedData;
